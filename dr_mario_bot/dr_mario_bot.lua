@@ -404,10 +404,10 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_v_x(v0, fv) and eq_v_x(v1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             if eq_v_x(v1, fv) and eq_v_x(v0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -423,7 +423,7 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_v_x(val, fv) then
-                return true, RO_ODR_V_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_V_01, idx - 1 -- for Lua
             end
         end
 
@@ -436,17 +436,17 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_v_x(v0, fv) and eq_x_x(v1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             if eq_x_x(v0, fv) and eq_v_x(v1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
 
             if eq_v_x(v1, fv) and eq_x_x(v0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
             if eq_x_x(v1, fv) and eq_v_x(v0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -462,13 +462,13 @@ local function ai_new(sys_ctx, player_ctx)
             -- |R |
             -- +--+
             if eq_v_x(v0, fv) and is_no(tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             -- |ry|
             -- | Y|
             -- +--+
             if is_no(fv) and eq_v_x(v1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
 
             -- ry -rotate-> yr
@@ -476,14 +476,14 @@ local function ai_new(sys_ctx, player_ctx)
             -- |Y |
             -- +--+
             if eq_v_x(v1, fv) and is_no(tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
             -- ry -rotate-> yr
             -- |yr|
             -- | R|
             -- +--+
             if is_no(fv) and eq_v_x(v0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -497,10 +497,10 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_v_x(c0, fv) or eq_v_x(c1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             if eq_v_x(c1, fv) or eq_v_x(c0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -519,10 +519,10 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_x_x(c0, fv) and eq_x_x(c1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             if eq_x_x(c1, fv) and eq_x_x(c0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -538,7 +538,7 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_x_x(val, fv) then
-                return true, RO_ODR_V_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_V_01, idx - 1 -- for Lua
             end
         end
 
@@ -554,13 +554,13 @@ local function ai_new(sys_ctx, player_ctx)
             -- |r |
             -- +--+
             if eq_x_x(v0, fv) and is_no(tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             -- |ry|
             -- | y|
             -- +--+
             if is_no(fv) and eq_x_x(v1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
 
             -- ry -rotate-> yr
@@ -568,14 +568,14 @@ local function ai_new(sys_ctx, player_ctx)
             -- |y |
             -- +--+
             if eq_x_x(v1, fv) and is_no(tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
             -- ry -rotate-> yr
             -- |yr|
             -- | r|
             -- +--+
             if is_no(fv) and eq_x_x(v0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -586,7 +586,7 @@ local function ai_new(sys_ctx, player_ctx)
         -- horizontally find 2 empty columns
         for idx, fv in ipairs(tops) do
             if is_no(fv) and is_no(tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
         end
         return false, 0, 0
@@ -596,7 +596,7 @@ local function ai_new(sys_ctx, player_ctx)
         -- vertically find an empty column
         for idx, fv in ipairs(tops) do
             if is_no(fv) then
-                return true, RO_ODR_V_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_V_01, idx - 1 -- for Lua
             end
         end
         return false, 0, 0
@@ -608,10 +608,10 @@ local function ai_new(sys_ctx, player_ctx)
 
         for idx, fv in ipairs(tops) do
             if eq_x_x(c0, fv) or eq_x_x(c1, tops[idx+1]) then
-                return true, RO_ODR_H_01, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_01, idx - 1 -- for Lua
             end
             if eq_x_x(c1, fv) or eq_x_x(c0, tops[idx+1]) then
-                return true, RO_ODR_H_10, idx - 1 -- fuck Lua
+                return true, RO_ODR_H_10, idx - 1 -- for Lua
             end
         end
 
@@ -664,6 +664,7 @@ local function ai_new(sys_ctx, player_ctx)
         local cur_cap = self.player_ctx:current_capsule_state()
         local tops_real, tops_cast = self.player_ctx:get_field_column_tops()
         local viruses = self.player_ctx:rest_viruses()
+        --emu.print('rest: ', viruses)
 
         local func, func_type = nil, nil
         local found, rotate_order, x = false, 0, 0
@@ -675,7 +676,7 @@ local function ai_new(sys_ctx, player_ctx)
             stg = strategies_sprint
         end
 
-        for idx, functor in ipairs(strategies) do
+        for idx, functor in ipairs(stg) do
             func, func_type = functor[1], functor[2]
             if func_type == real then
                 found, rotate_order, x = func(self, cur_cap, tops_real)
@@ -742,5 +743,5 @@ while (true) do
     p1:on_each_frame()
     p1_ai:on_each_frame()
 
-	emu.frameadvance()
+    emu.frameadvance()
 end
